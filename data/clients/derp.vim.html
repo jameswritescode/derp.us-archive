@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/public_html/derp.us/development/data/clients/derp.vim.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v6">
+<meta name="syntax" content="vim">
+<meta name="settings" content="use_css,number_lines">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #d0d0d0; background-color: #121212; }
+body { font-family: monospace; color: #d0d0d0; background-color: #121212; }
+.lnr { color: #bcbcbc; background-color: #1c1c1c; }
+.Conditional { color: #d7005f; font-weight: bold; }
+.Special { color: #5fd7ff; background-color: #080808; }
+.Error { color: #ffafff; background-color: #87005f; }
+.Number { color: #af5fff; }
+.Operator { color: #d7005f; }
+.String { color: #afaf87; }
+.Function { color: #87ff00; }
+.Delimiter { color: #626262; }
+.Statement { color: #d7005f; font-weight: bold; }
+.PreProc { color: #87ff00; }
+.Comment { color: #5f5f5f; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="lnr"> 1 </span><span class="Comment">&quot;</span> <span class="PreProc">File:</span><span class="Comment"> derp.vim</span>
+<span class="lnr"> 2 </span><span class="Comment">&quot;</span> <span class="PreProc">Author:</span><span class="Comment"> James Newton &lt;james@Zaphyous.com&gt;</span>
+<span class="lnr"> 3 </span><span class="Comment">&quot;</span> <span class="PreProc">Description:</span><span class="Comment"> post to derp.us with vim</span>
+<span class="lnr"> 4 </span><span class="Comment">&quot;</span> <span class="PreProc">Last Modified:</span><span class="Comment"> August 26, 2010</span>
+<span class="lnr"> 5 </span>
+<span class="lnr"> 6 </span><span class="Statement">if</span> <span class="Delimiter">(</span><span class="Function">exists</span><span class="Delimiter">(</span><span class="String">&quot;g:loaded_derp&quot;</span><span class="Delimiter">)</span> <span class="Operator">&amp;&amp;</span> g:loaded_derp<span class="Delimiter">)</span> <span class="Operator">||</span> &amp;<span class="Statement">cp</span>
+<span class="lnr"> 7 </span>    <span class="Statement">finish</span>
+<span class="lnr"> 8 </span><span class="Statement">endif</span>
+<span class="lnr"> 9 </span>
+<span class="lnr">10 </span><span class="Statement">let</span> g:loaded_derp <span class="Operator">=</span> <span class="Number">1</span>
+<span class="lnr">11 </span><span class="Statement">let</span> g:derp_file_type <span class="Operator">=</span> <span class="Function">expand</span><span class="Delimiter">(</span><span class="String">'%'</span><span class="Delimiter">)</span>
+<span class="lnr">12 </span>
+<span class="lnr">13 </span><span class="Statement">if</span> <span class="Function">has</span><span class="Delimiter">(</span><span class="String">&quot;python&quot;</span><span class="Delimiter">)</span>
+<span class="lnr">14 </span>    <span class="Statement">command</span>! DerpPost <span class="Statement">python</span> <span class="Error">mkreq</span>()
+<span class="lnr">15 </span><span class="Statement">else</span>
+<span class="lnr">16 </span>    <span class="Statement">command</span>! DerpPost echo <span class="String">&quot;Only avaliable with +python support.&quot;</span>
+<span class="lnr">17 </span><span class="Statement">endif</span>
+<span class="lnr">18 </span>
+<span class="lnr">19 </span><span class="Statement">if</span> <span class="Function">has</span><span class="Delimiter">(</span><span class="String">&quot;python&quot;</span><span class="Delimiter">)</span>
+<span class="lnr">20 </span><span class="Comment">python &lt;&lt;EOF</span>
+<span class="lnr">21 </span>
+<span class="lnr">22 </span><span class="PreProc">import</span> vim
+<span class="lnr">23 </span><span class="PreProc">from</span> urllib <span class="PreProc">import</span> urlencode, urlopen
+<span class="lnr">24 </span>
+<span class="lnr">25 </span>__version__ = <span class="String">&quot;1.0&quot;</span>
+<span class="lnr">26 </span>
+<span class="lnr">27 </span><span class="Statement">def</span> <span class="Function">mkreq</span>():
+<span class="lnr">28 </span>    <span class="Function">buffer</span> = <span class="String">&quot;</span><span class="Special">\n</span><span class="String">&quot;</span>.join(vim.current.<span class="Function">buffer</span>[<span class="Number">0</span>:])
+<span class="lnr">29 </span>    data = [(<span class="String">&quot;f:1&quot;</span>, <span class="Function">buffer</span>), (<span class="String">&quot;type:1&quot;</span>, vim.<span class="Function">eval</span>(<span class="String">&quot;&amp;filetype&quot;</span>))]
+<span class="lnr">30 </span>    <span class="Conditional">if</span> vim.<span class="Function">eval</span>(<span class="String">'g:derp_file_type'</span>) != <span class="Function">None</span>:
+<span class="lnr">31 </span>        data.append((<span class="String">'name:1'</span>, vim.<span class="Function">eval</span>(<span class="String">'g:derp_file_type'</span>)))
+<span class="lnr">32 </span>    res = urlopen(<span class="String">&quot;<a href="http://derp.us/">http://derp.us/</a>&quot;</span>, urlopen(data)).read().strip()
+<span class="lnr">33 </span>    vim.command(<span class="String">&quot;py print '&quot;</span> + res + <span class="String">&quot;'&quot;</span>)
+<span class="lnr">34 </span>
+<span class="lnr">35 </span><span class="Comment">EOF</span>
+<span class="lnr">36 </span><span class="Statement">endif</span>
+</pre>
+</body>
+</html>

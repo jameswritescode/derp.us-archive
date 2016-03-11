@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>derp.us - command line multi tool</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="James Newton" />
+        <meta name="description" content="derp.us - a command line multi tool website that functions as a pastebin, url shortener, and image uploader!" />
+        <meta name="keywords" content="derp.us, derp, command, line, tool, tools, pastebin, url, shortener, image, upload, uploader" />
+        <link href="/css/main.css" media="all" rel="stylesheet" />
+        <link href="/inc/favicon.png" rel="shortcut icon" />
+    </head>
+    <body>
+        <pre>
+404(1)                                    FILE NOT FOUND                                 404(1)
+
+
+
+<strong>NAME</strong>
+    404 - file not found
+
+<strong>SYNOPSIS</strong>
+    <strong>file --not=found</strong>
+
+<strong>DESCRIPTION</strong>
+    this shows up when the file you're looking for does not exist.
+
+<strong>BUGS</strong>
+    If there are any bugs please email <a href="mailto:derp@derp.us">derp@derp.us</a> with information on the bug in question.
+
+    You can also go to irc.splitnet.org #Zaphyous and let us know.
+
+<strong>COPYRIGHT</strong>
+    derp.us is copyright <a href="http://zaphyous.com/">Zaphyous Networks</a> and its authors.
+
+<strong>AUTHOR</strong>
+    James Newton &lt;<a href="mailto:james@zaphyous.com">james@Zaphyous.com</a>&gt;
+
+<strong>SEE ALSO</strong>
+    <strong><a href="http://blog.derp.us/">blog</a></strong>(1), <strong><a href="http://derp.us/clients">client</a></strong>(2), <strong><a href="http://derp.us/faq">faq</a></strong>(7), <strong><a href="http://gui.derp.us/">gui</a></strong>(1), <strong><a href="http://derp.us/inspiration">inspiration</a></strong>(3), <strong><a href="http://derp.us/thanks">thanks</a></strong>(3), <strong><a href="http://derp.us/todo">todo</a></strong>(11), <strong><a href="http://derp.us/types" id="types">types</a></strong>(176), <strong><a href="http://www.vim.org/">vim</a></strong>(&Pi;)
+        </pre>
+    </body>
+</html>

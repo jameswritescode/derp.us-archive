@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>derp.us - command line multi tool</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="James Newton" />
+        <meta name="description" content="derp.us - a command line multi tool website that functions as a pastebin, url shortener, and image uploader!" />
+        <meta name="keywords" content="derp.us, derp, command, line, tool, tools, pastebin, url, shortener, image, upload, uploader" />
+        <link href="/css/main.css" media="all" rel="stylesheet" />
+        <link href="/inc/favicon.png" rel="shortcut icon" />
+    </head>
+    <body>
+        <pre>
+DERP(1)                            DERP.US COMMAND LINE TOOL                            DERP(1)
+
+
+
+<strong>NAME</strong>
+    derp - command line pastebin, url shortener, and image uploader
+
+<strong>SYNOPSIS</strong>
+    <strong>cat file | curl -F option:1='&lt;-' [-F</strong> ... <strong>]</strong>
+
+<strong>DESCRIPTION</strong>
+    derp is a command line pastebin, url shortener, and image uploader that can be posted to
+    via unix (and in some case Windows DOS or Power Shell) command line and scripts.
+
+<strong>OPTIONS</strong>
+    f:N     URL encoded paste data. This is required if you wish to use the pastebin.
+    
+    img:N   Image data. This is required if you wish to use the image uploader.
+    
+    url:N   
+            URL of website you wish to use with the url shortener. This is required to use 
+            the url shortener.
+
+    login   
+            Your derp.us account. This is used for tagging pastes, urls, and images to your
+            account. To create an account you can send a login with a token and it will
+            create the account if it does not already exist. This is also required for
+            using the rm command or passwd:N.
+
+    token   Your derp.us account password. This is required for sending with login.
+
+    rm      ID of the paste you would like to delete. Login is required for use.
+
+    name:N  Name of your paste, or image.
+
+    priv:N  
+            Private paste, url, or image. If this is sent it will not show up in /user/.
+            It will also mark you as "Anonymous" in image and URL information.
+
+    passwd:N
+            Password protected paste. This can only be sent if marking a paste priv:N.
+
+    stats   derp.us usage statistics.
+
+    pastes  Sends all the pastes tagged to your login. Login is required for use.
+
+    type:N  
+            The type of paste you are sending. This is used for syntax highlighting from
+            http://derp.us/ID/. See <a href="#types" onclick="document.getElementById('types').style.color = 'red'">types</a>.
+
+    /user/
+            From http://derp.us/user/ you can view pastes made by both users with logins
+            and users without logins. You can view pastes made by login via
+            http://derp.us/user/login. User data can also be viewed in rss, json, xml, or
+            qrcode formats, just append the data type like /user/(login).format.
+
+    /id/    
+            From http://derp.us/id/ you can view a paste with line numbers. If a type:N
+            was supplied when the paste was made, it will add syntax highlighting. You can
+            also append #line-no to /id/ to link to a specific line. Paste data can also
+            be viewed in rss, json, xml, or qrcode formats, just append the data type like
+            /id.(format)
+
+    /download/
+            From http://derp.us/download/id you can download a paste (providing you want it
+            on your desktop). If a type:N was sent with the paste, it will (in some cases)
+            download with the file format of the language it is in, otherwise it will be a
+            .txt file.
+
+    /report/
+            From http://derp.us/report/id you can report a paste, URL, or image by making id
+            the corresponding id. If a derp administrator deams it malicious or otherwise, it
+            will be removed, and possibly blacklisted (if it is a URL).
+    
+    /search/
+            From http://derp.us/search/ you can search through pastes for things that hold
+            data related to your search.
+
+<strong>BUGS</strong>
+    If there are any bugs please email <a href="mailto:derp@derp.us">derp@derp.us</a> with information on the bug in question.
+
+    You can also go to irc.splitnet.org #Zaphyous and let us know.
+
+<strong>COPYRIGHT</strong>
+    derp.us is copyright <a href="http://zaphyous.com/">Zaphyous Networks</a> and its authors.
+
+<strong>AUTHOR</strong>
+    James Newton &lt;<a href="mailto:james@zaphyous.com">james@Zaphyous.com</a>&gt;
+
+<strong>SEE ALSO</strong>
+    <strong><a href="http://blog.derp.us/">blog</a></strong>(1), <strong><a href="/pages/clients">client</a></strong>(2), <strong><a href="/pages/faq">faq</a></strong>(7), <strong><a href="http://gui.derp.us/">gui</a></strong>(1), <strong><a href="/pages/inspiration">inspiration</a></strong>(3), <strong><a href="/pages/thanks">thanks</a></strong>(3), <strong><a href="/pages/todo">todo</a></strong>(11), <strong><a href="/pages/types" id="types">types</a></strong>(176), <strong><a href="http://www.vim.org/">vim</a></strong>(&Pi;)
+        </pre>
+    </body>
+</html>

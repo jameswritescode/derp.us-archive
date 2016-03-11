@@ -1,0 +1,35 @@
+DirectoryIndex index.php
+
+RewriteEngine On
+RewriteBase /
+# XXX: all rules must be placed before the post.php rules.
+RewriteRule ^pages/([a-zA-Z0-9]+)(/)?$ data/$1.php
+RewriteRule ^search(/)?$ search.php
+RewriteRule ^search/([a-zA-Z0-9]+)(/)?$ search.php?q=$1
+RewriteRule ^search/([a-zA-Z0-9]+)/([0-9]+)(/)?$ search.php?q=$1&p=$2
+RewriteRule ^download(/)?$ down.php
+RewriteRule ^download/([0-9]+)(/)?$ down.php?id=$1
+RewriteRule ^user(/)?$ login.php
+RewriteRule ^user/.rss$ rss.php
+RewriteRule ^user/([a-zA-Z0-9]+)(/)?.rss$ rss.php?login=$1
+RewriteRule ^user/.json$ gen.php?type=json
+RewriteRule ^user/([a-zA-Z0-9]+)(/)?.json$ gen.php?type=json&login=$1
+RewriteRule ^user/.xml$ gen.php?type=xml
+RewriteRule ^user/([a-zA-Z0-9]+)(/)?.xml$ gen.php?type=xml&login=$1
+RewriteRule ^user/.qrcode$ gen.php?type=qrcode
+RewriteRule ^user/([a-zA-Z0-9]+)(/)?.qrcode$ gen.php?type=qrcode&login=$1
+RewriteRule ^user/([0-9]+)(/)?$ login.php?p=$1
+RewriteRule ^user/([a-zA-Z0-9]+)(/)?$ login.php?login=$1
+RewriteRule ^user/([a-zA-Z0-9]+)/([0-9]+)(/)?$ login.php?login=$1&p=$2
+RewriteRule ^report(/)?$ report.php
+RewriteRule ^report/([a-zA-Z0-9]+)(/)?$ report.php?id=$1
+RewriteRule ^.rss$ rss.php
+RewriteRule ^.json$ gen.php?type=json
+RewriteRule ^.xml$ gen.php?type=xml
+RewriteRule ^.qrcode$ gen.php?type=qrcode
+RewriteRule ^([a-zA-Z0-9]+)(/)?.rss rss.php?id=$1
+RewriteRule ^([a-zA-Z0-9]+)(/)?.xml gen.php?type=xml&id=$1
+RewriteRule ^([a-zA-Z0-9]+)(/)?.json gen.php?type=json&id=$1
+RewriteRule ^([a-zA-Z0-9]+)(/)?.qrcode gen.php?type=qrcode&id=$1
+RewriteRule ^([a-zA-Z0-9]+)$ post.php?id=$1
+RewriteRule ^([a-zA-Z0-9]+)/$ post.php?id=$1&extend

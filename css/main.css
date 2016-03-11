@@ -1,0 +1,36 @@
+a {
+    text-decoration: none;
+}
+
+input, span {
+    font-family: monospace;
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-buttom:end:increment {
+    height: 5px;
+    display: block;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    height: 0px;
+    background-color: #F9F9F9;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 0px;
+    background-color: #F9F9F9;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+}
